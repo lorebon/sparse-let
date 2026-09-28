@@ -1,4 +1,4 @@
-"""Sparse-let decoding and BRKGA learning shared by the experiment scripts."""
+"""Sparse-let decoding and BRKGA learning for experiments and prediction."""
 
 from dataclasses import dataclass
 from time import perf_counter

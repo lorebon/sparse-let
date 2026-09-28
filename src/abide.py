@@ -1,7 +1,7 @@
 """Binary event tables and exact sliding-window distances.
 
 Rows represent unit intervals [t, t + 1); columns represent event labels.
-The historical abide functions return mismatch counts (squared Euclidean
+The distance kernels return mismatch counts (squared Euclidean distances
 for binary tables). The feature helpers also support Euclidean distances.
 """
 
@@ -152,26 +152,22 @@ def features_from_tables(
     return np.sqrt(features) if distance == "euclidean" else features
 
 
-def abide_old(event_tables, event_tables_s, query):
+def abide_reference(event_tables, offsets, query):
     """Unpruned reference search, returning one mismatch count per sequence."""
-    return features_from_tables(event_tables, event_tables_s, [query], method="reference")[:, 0]
+    return features_from_tables(event_tables, offsets, [query], method="reference")[:, 0]
 
 
-def abide(event_tables, event_tables_s, query):
-    """Lower-bound pruning with the same exact result as abide_old."""
-    return features_from_tables(event_tables, event_tables_s, [query])[:, 0]
+def abide(event_tables, offsets, query):
+    """Lower-bound pruning, returning one exact mismatch count per sequence."""
+    return features_from_tables(event_tables, offsets, [query])[:, 0]
 
 
-def abide_full(event_tables, event_tables_s, query):
+def abide_full(event_tables, offsets, query):
     """Lower-bound pruning plus channel-ordered early abandonment."""
-    return features_from_tables(event_tables, event_tables_s, [query], method="full")[:, 0]
+    return features_from_tables(event_tables, offsets, [query], method="full")[:, 0]
 
 
 def transform_sequences(sequences, queries, *, method="abide", distance="squared"):
     """Embed interval sequences using previously learned queries."""
     tables, offsets = preprocess_data(sequences)
     return features_from_tables(tables, offsets, queries, method=method, distance=distance)
-
-
-# Original helper name retained for existing analysis scripts.
-abide_features_test = transform_sequences

@@ -7,7 +7,7 @@ from numba import get_num_threads, set_num_threads
 from abide import (
     abide,
     abide_full,
-    abide_old,
+    abide_reference,
     features_from_tables,
     get_event_table,
     preprocess_data,
@@ -30,7 +30,7 @@ def pack(tables):
     return np.concatenate(tables), np.r_[0, np.cumsum([len(t) for t in tables])]
 
 
-@pytest.mark.parametrize("function", [abide_old, abide, abide_full])
+@pytest.mark.parametrize("function", [abide_reference, abide, abide_full])
 def test_sequence_boundaries_and_last_window(function):
     query = np.array([[1], [1]], dtype=np.int32)
     tables = [

@@ -144,8 +144,8 @@ with np.load("results/quickstart/fold_01.npz", allow_pickle=False) as fold:
     np.testing.assert_allclose(features, fold["test_features"])
 ```
 
-Use the distance setting in the run's summary; the low-level feature helpers
-retain `distance="squared"` as their compatibility default. New sequences must
+Use the distance setting in the run's summary; `features_from_tables` and
+`transform_sequences` default to `distance="squared"`. New sequences must
 have the same event-label mapping and at least L time rows. This repository does
 not pickle fitted classifiers. You can refit one from the saved training features,
 labels, settings, and fold seed.

@@ -88,39 +88,3 @@ def load_dataset(name, cast_to_int=True, data_dir=None):
     if len(sequences) != len(classes):
         raise ValueError(f"{directory}: {len(sequences)} sequences but {len(classes)} class labels")
     return sequences, classes
-
-
-# Original convenience functions for the six bundled datasets.
-def load_auslan2(cast_to_int=False):
-    return load_dataset("AUSLAN2", cast_to_int)
-
-
-def load_blocks(cast_to_int=False):
-    return load_dataset("BLOCKS", cast_to_int)
-
-
-def load_context(cast_to_int=False):
-    return load_dataset("CONTEXT", cast_to_int)
-
-
-def load_hepatitis(cast_to_int=False):
-    return load_dataset("HEPATITIS", cast_to_int)
-
-
-def load_pioneer(cast_to_int=False):
-    return load_dataset("PIONEER", cast_to_int)
-
-
-def load_skating(cast_to_int=False):
-    return load_dataset("SKATING", cast_to_int)
-
-
-def get_all_old_methods():
-    return [
-        load_auslan2,
-        load_blocks,
-        load_context,
-        load_hepatitis,
-        load_pioneer,
-        load_skating,
-    ]
