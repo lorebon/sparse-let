@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper below."
+title: "Sparse-let: interpretable classification of event-interval sequences"
+type: software
+authors:
+  - family-names: Bonasera
+    given-names: Lorenzo
+repository-code: "https://github.com/lorebon/sparse-let"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Learning Sparse-Lets for Interpretable Classification of Event-interval Sequences"
+  authors:
+    - family-names: Bonasera
+      given-names: Lorenzo
+    - family-names: Duma
+      given-names: Davide
+    - family-names: Gualandi
+      given-names: Stefano
+  year: 2024
+  doi: "10.1007/978-3-031-62922-8_1"
+  start: 3
+  end: 18
