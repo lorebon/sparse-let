@@ -1,6 +1,6 @@
 # Datasets
 
-[Overview](../README.md) · [Usage guide](../docs/usage.md)
+[Overview](../README.md)
 
 Six benchmark datasets are included without modification:
 

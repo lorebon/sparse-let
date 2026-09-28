@@ -11,7 +11,7 @@ classifying event-interval sequences. A biased random-key genetic algorithm
 sliding-window distance to each pattern, then classified using an SVM or random
 forest.
 
-[Usage guide](docs/usage.md) · [Datasets](data/README.md) · [Python example](examples/fit_and_predict.py)
+[Datasets](data/README.md) · [Python example](examples/fit_and_predict.py)
 
 ## Quick start
 
@@ -51,8 +51,7 @@ Results are written to `results/quickstart/`: `summary.json` contains scores and
 settings, while the fold files contain learned patterns, features, and predictions.
 Use a new output directory for each run, or omit `--output` to create one automatically.
 
-For parameter descriptions, classifier choices, and channel subsampling, see the
-[usage guide](docs/usage.md). To learn patterns and predict from Python, run:
+To learn patterns and predict from Python, run:
 
 ```bash
 python examples/fit_and_predict.py
@@ -68,7 +67,6 @@ python examples/fit_and_predict.py
 | [src/load_data.py](src/load_data.py), [src/train_test_split.py](src/train_test_split.py) | Dataset loading and stratified splits |
 | [data/](data/README.md) | Six benchmark datasets, format, and sources |
 | [examples/fit_and_predict.py](examples/fit_and_predict.py) | A complete training and prediction example |
-| [docs/usage.md](docs/usage.md) | Parameters, outputs, and development commands |
 | [tests/](tests/) | Numerical and experiment regression tests |
 
 ## Citation and license
