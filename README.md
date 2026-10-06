@@ -67,7 +67,6 @@ python examples/fit_and_predict.py
 | [src/load_data.py](src/load_data.py), [src/train_test_split.py](src/train_test_split.py) | Dataset loading and stratified splits |
 | [data/](data/README.md) | Six benchmark datasets, format, and sources |
 | [examples/fit_and_predict.py](examples/fit_and_predict.py) | A complete training and prediction example |
-| [tests/](tests/) | Numerical and experiment regression tests |
 
 ## Citation and license
 
